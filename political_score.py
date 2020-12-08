@@ -64,7 +64,6 @@ def compileHouseRep2016():
    
         if year == "2016":
             if state not in houseReps2016:
-                # UGLY CODE FIX LATER
                 if most_party != "":
                     winners.append(most_party)
                 if winners != []:
@@ -118,7 +117,6 @@ def compileHouseRep2018():
    
         if year == "2018":
             if state not in houseReps2018:
-                # UGLY CODE FIX LATER
                 if most_party != "":
                     winners.append(most_party)
                 if winners != []:
@@ -148,3 +146,20 @@ def compileHouseRep2018():
         houseReps2018[curr_state] = winners
     
     return houseReps2018
+
+
+# dictionaries for parties of current us senators by state
+def compileSenators():
+    stateSenators = {}
+    
+    senatorRow = csv.DictReader(open("arnoudb_Senators-of-the-116th-Congress.csv", "r"))
+    for row in senatorRow:
+        state = row.pop("State")
+        party = row.pop("PartyAffiliation")
+        if(state not in stateSenators):
+            stateSenators[state] = [party]
+        else:
+            stateSenators[state].append(party)
+    return stateSenators
+
+print(compileSenators())
