@@ -6,7 +6,7 @@ import seaborn as sns
 sns.set()
 
 
-# creating a data frame 
+# creating a data frame for COVID-19 cases per state
 df = pd.read_csv("united_states_covid19_cases_and_deaths_by_state.csv") 
 
 #makes the chart
@@ -23,3 +23,5 @@ plt.title('Total Cases by State/Territory', fontsize=25)
 plt.xlabel('State/Territory', fontsize=14)
 plt.ylabel('Total Cases', fontsize=14)
 plt.savefig('Total_Cases_by_State_Territory.pdf')
+
+
