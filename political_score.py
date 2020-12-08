@@ -1,4 +1,4 @@
-'''make a composite score using data weighing current governors' parties, 2016 Presidential Election, 2018 House/Senate, 
+'''make a composite score using data weighing current governors' parties, 2012 and 2016 Presidential Election, 2016 and 2018 House, Current Senate, 
  etc.'''
 
 import csv
@@ -160,6 +160,48 @@ def compileSenators():
             stateSenators[state] = [party]
         else:
             stateSenators[state].append(party)
+    
     return stateSenators
 
-print(compileSenators())
+
+# compiles a score for every state where + is Republican and - is Democrat
+def getScores():
+    scores = dict.fromkeys(compileGovernor(), 0)
+    govDict = compileGovernor()
+    presDict2012 = compilePresident2012()
+    presDict2016 = compilePresident2016()
+    senatorDict = compileSenators()
+    repDict2016 = compileHouseRep2016()
+    repDict2018 = compileHouseRep2018()
+    for state in scores:
+        if(govDict[state] == "republican"):
+            scores[state] += 3
+        elif(govDict[state] == "democrat"):
+            scores[state] -= 3
+        if(presDict2012[state] == "republican"):
+            scores[state] += 1
+        elif(presDict2012[state] == "democrat"):
+            scores[state] -= 1
+        if(presDict2016[state] == "republican"):
+            scores[state] += 1
+        elif(presDict2016[state] == "democrat"):
+            scores[state] -= 1
+        for party in senatorDict[state]:
+            if(party == "republican"):
+                scores[state] += 1
+            elif(party == "democrat"):
+                scores[state] -= 1
+        for party in repDict2016[state]:
+            if(party == "republican"):
+                scores[state] += 1
+            elif(party == "democrat"):
+                scores[state] -= 1
+        for party in repDict2018[state]:
+            if(party == "republican"):
+                scores[state] += 1
+            elif(party == "democrat"):
+                scores[state] -= 1
+    print(scores)
+
+
+getScores()
