@@ -175,9 +175,9 @@ def getScores():
     repDict2018 = compileHouseRep2018()
     for state in scores:
         if(govDict[state] == "republican"):
-            scores[state] += 3
+            scores[state] += 1
         elif(govDict[state] == "democrat"):
-            scores[state] -= 3
+            scores[state] -= 1
         if(presDict2012[state] == "republican"):
             scores[state] += 1
         elif(presDict2012[state] == "democrat"):
