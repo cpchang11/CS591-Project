@@ -7,7 +7,7 @@ sns.set()
 
 
 # creating a data frame for COVID-19 cases per state
-df = pd.read_csv("united_states_covid19_cases_and_deaths_by_state.csv") 
+df = pd.read_csv("../CSV/united_states_covid19_cases_and_deaths_by_state.csv") 
 
 #makes the chart
 plt.figure(figsize=(13, 15))

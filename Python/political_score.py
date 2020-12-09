@@ -1,5 +1,6 @@
-'''make a composite score using data weighing current governors' parties, 2012 and 2016 Presidential Election, 2016 and 2018 House, Current Senate, 
- etc.'''
+'''make a composite score using data weighing current governors' parties, 
+2012 and 2016 Presidential Election, 2016 and 2018 House, Current Senate, etc.
+'''
 
 import csv
 
