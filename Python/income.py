@@ -10,7 +10,7 @@ def averageMedian():
     total = 0
     count = 0
     prevState = "Alabama"
-    stateRow = csv.DictReader(open("kaggle_income.csv", "r", encoding="utf8", errors="ignore"))
+    stateRow = csv.DictReader(open("../CSV/kaggle_income.csv", "r", encoding="utf8", errors="ignore"))
     for row in stateRow: 
         state  = row.pop("State_Name")
         county = row.pop("County")
@@ -43,3 +43,32 @@ def averageMedian():
 
     return states, counties
 
+
+def minmaxMedian():
+    states = {}
+    minimum = 1000000000
+    maximum = 0
+    prevState = "Alabama"
+    stateRow = csv.DictReader(open("../CSV/kaggle_income.csv", "r", encoding="utf8", errors="ignore"))
+    for row in stateRow: 
+        state  = row.pop("State_Name")
+        med = int(row.pop("Median"))
+        if(med == 0 or med == 300000):
+            continue
+        if(prevState != state):
+            states[prevState] = ["Min: " + str(minimum), "Max: " + str(maximum)]
+            minimum = med
+            maximum = 0
+            prevState = state
+        else:
+            if(minimum > med):
+                minimum = med
+            if(maximum < med):
+                maximum = med
+        
+        prevState = state
+    
+
+    return states
+
+print(minmaxMedian())
