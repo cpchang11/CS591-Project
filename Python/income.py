@@ -1,6 +1,6 @@
 '''
 Finds the average using county median household income 
-for each state and county and returns a dictionary
+for each state and county and returns a dictionary also finds the min and max of each state
 '''
 import csv
 
@@ -71,4 +71,5 @@ def minmaxMedian():
 
     return states
 
-print(minmaxMedian())
+averageMedian()
+minmaxMedian()
