@@ -201,7 +201,7 @@ def getScores():
                 scores[state] += 1
             elif(party == "democrat"):
                 scores[state] -= 1
-    print(scores)
 
+    return scores
 
 getScores()
