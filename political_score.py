@@ -204,4 +204,4 @@ def getScores():
 
     return scores
 
-getScores()
+print(getScores())
