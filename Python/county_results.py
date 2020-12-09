@@ -3,7 +3,7 @@ import pandas as pd
 
 YEAR = 2016
 
-df_sample = pd.read_csv('countypres_2000-2016.csv')
+df_sample = pd.read_csv('../CSV/countypres_2000-2016.csv')
 df_sample = df_sample[df_sample['year'] == YEAR]
 df_sample = df_sample[df_sample['FIPS'] > 0]
 

@@ -6,7 +6,7 @@ import csv
 # dictionary for party of each state governor
 def compileGovernor():
     governorParty = {}
-    governorRow = csv.DictReader(open("us-governors.csv", "r"))
+    governorRow = csv.DictReader(open("../CSV/us-governors.csv", "r"))
     for row in governorRow:
         governorParty[row.pop("state_name")] = row.pop("party")
 
@@ -16,7 +16,7 @@ def compileGovernor():
 # dictionaries for party each state voted for in 2012
 def compilePresident2012():
     presidentialParty2012 = {}
-    presidentRow = csv.DictReader(open("1976-2016-president.csv", "r"))
+    presidentRow = csv.DictReader(open("../CSV/1976-2016-president.csv", "r"))
     for row in presidentRow:
         state = row.pop("state")
         year = row.pop("year")
@@ -29,7 +29,7 @@ def compilePresident2012():
 # dictionaries for party each state voted for in 2016
 def compilePresident2016():
     presidentialParty2016 = {}
-    presidentRow = csv.DictReader(open("1976-2016-president.csv", "r"))
+    presidentRow = csv.DictReader(open("../CSV/1976-2016-president.csv", "r"))
     for row in presidentRow:
             state = row.pop("state")
             year = row.pop("year")
@@ -50,7 +50,7 @@ def compileHouseRep2016():
     winners = []
     curr_state = ""
     
-    houseRepRows = csv.DictReader(open("1976-2018-house2.csv", "r", encoding="utf8", errors="ignore"))
+    houseRepRows = csv.DictReader(open("../CSV/1976-2018-house2.csv", "r", encoding="utf8", errors="ignore"))
 
     for row in houseRepRows:
         state = row.pop("state")
@@ -103,7 +103,7 @@ def compileHouseRep2018():
     winners = []
     curr_state = ""
     
-    houseRepRows = csv.DictReader(open("1976-2018-house2.csv", "r", encoding="utf8", errors="ignore"))
+    houseRepRows = csv.DictReader(open("../CSV/1976-2018-house2.csv", "r", encoding="utf8", errors="ignore"))
   
     for row in houseRepRows:
         state = row.pop("state")
@@ -152,7 +152,7 @@ def compileHouseRep2018():
 def compileSenators():
     stateSenators = {}
     
-    senatorRow = csv.DictReader(open("arnoudb_Senators-of-the-116th-Congress.csv", "r"))
+    senatorRow = csv.DictReader(open("../CSV/arnoudb_Senators-of-the-116th-Congress.csv", "r"))
     for row in senatorRow:
         state = row.pop("State")
         party = row.pop("PartyAffiliation")

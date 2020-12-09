@@ -4,7 +4,7 @@ import plotly.figure_factory as ff
 import numpy as np
 import pandas as pd
 
-df_sample = pd.read_csv('covid_county_population_usafacts.csv')
+df_sample = pd.read_csv('../CSV/covid_county_population_usafacts.csv')
 df_sample = df_sample[df_sample['countyFIPS'] > 0]
 df_sample = df_sample[df_sample['population'] > 0]
 df_sample = df_sample[df_sample['covid'] > 0]
