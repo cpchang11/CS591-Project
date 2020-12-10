@@ -4,6 +4,10 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 from political_score import *
 from state_convertor import *
+from income import *
+from education import *
+import matplotlib.pyplot as plt
+from scipy import stats
 
 YEAR = 2016
 
@@ -60,8 +64,67 @@ republican_death = round(republican_death)
 republican_population = round(republican_population)
 republican_covid = round(republican_covid)
 
-print(democrat_population, democrat_covid, democrat_death)
-print(republican_population, republican_covid, republican_death)
+""" Political View vs COVID-19 Correlation Output """
+print("Democrat", "\n------------", "\nPopulation: ", democrat_population, "\nCOVID-19: ", democrat_covid,
+      "\nDeath: ", democrat_death, "\nCovid/Population: ", round(democrat_covid / democrat_population * 100, 4), "\nDeath/Covid: ",
+      round(democrat_death / democrat_covid * 100, 4))
+print("------------", "\n------------")
+print("Republican", "\n------------", "\nPopulation: ", republican_population, "\nCOVID-19: ", republican_covid,
+      "\nDeath: ", republican_death, "\nCovid/Population: ", round(republican_covid / republican_population * 100, 4), "\nDeath/Covid: ",
+      round(republican_death / republican_covid * 100, 4))
+
+""" COVID-19 vs Wealthy States Correlation Output """
+state_average = average_median_states()
+county_average = average_median_county()
+state_stats = minmaxMedian()
+
+df_wealth = df_covid[df_covid['countyFIPS'] > 0]
+county_name = df_wealth['County Name'].tolist()
+state_name = df_wealth['State'].tolist()
+full_name = []
+assert(len(county_name) == len(state_name))
+for i in range(len(state_name)):
+    full_name.append(county_name[i] + ", " + abbrev_us_state[state_name[i]])
+
+county_income = []
+for i in range(len(full_name)):
+    if full_name[i] in county_average.keys():
+        county_income.append(county_average[full_name[i]])
+    else:
+        county_income.append(-1)
+
+""" COVID/POPULATION, DEATH/COVID """
+x1 = []
+y1 = []
+y2 = []
+covid = df_wealth['covid'].tolist()
+population = df_wealth['population'].tolist()
+death = df_wealth['death'].tolist()
+for i in range(len(county_income)):
+    if county_income[i] > 0:
+        x1.append(county_income[i] // 1000)
+        y1.append(round(covid[i] / population[i] * 100, 4))
+        y2.append(round(death[i] / covid[i] * 100, 4))
+
+plt.plot(x1, y1, 'r.')
+plt.xlabel('County Average Income in Thousands')
+plt.ylabel('COVID Cases Per Population (%)')
+mymodel = np.poly1d(np.polyfit(x1, y1, 1))
+myline = np.linspace(1, 150, 1000)
+plt.plot(myline, mymodel(myline))
+gradient, intercept, r_value, p_value, std_err = stats.linregress(x1, y1)
+print("y = ", gradient, "x + ", intercept)
+plt.show()
+
+plt.plot(x1, y2, 'g.')
+plt.xlabel('County Average Income in Thousands')
+plt.ylabel('COVID Death Per Cases (%)')
+mymodel = np.poly1d(np.polyfit(x1, y2, 1))
+myline = np.linspace(1, 150, 1000)
+plt.plot(myline, mymodel(myline))
+gradient, intercept, r_value, p_value, std_err = stats.linregress(x1, y2)
+print("y = ", gradient, "x + ", intercept)
+plt.show()
 
 
 """ Other Stuff """

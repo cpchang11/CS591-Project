@@ -38,4 +38,19 @@ def normalize():
     
     return data
 
+
+def state_edu():
+    states = {}
+    stateRow = csv.DictReader(open("../CSV/state_demographics.csv", "r", encoding="utf8", errors="ignore"))
+
+    for row in stateRow:
+        state  = row.pop("State")
+        hs = float(row.pop("Education.High School or Higher"))
+        ba = float(row.pop("Education.Bachelor's Degree or Higher"))
+        if(state not in states):
+            states[state] = [hs, ba]
+
+    return states
+
+
 normalize()
