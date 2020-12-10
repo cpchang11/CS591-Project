@@ -133,7 +133,7 @@
       <recent name="$PROJECT_DIR$/CSV" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.covid_cases_state_percentage">
+  <component name="RunManager" selected="Python.covid_political_correlation">
     <configuration name="covid_cases_state_percentage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS591-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -241,8 +241,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.covid_cases_state_percentage" />
         <item itemvalue="Python.covid_political_correlation" />
+        <item itemvalue="Python.covid_cases_state_percentage" />
         <item itemvalue="Python.education" />
         <item itemvalue="Python.covid_total_cases_states" />
         <item itemvalue="Python.test" />
