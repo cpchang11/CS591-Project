@@ -1,4 +1,4 @@
-state,covid,political_score,death,population,c/p,age,avg,min,max,highschool,college,d/c,d or r,avg2
+state,covid,political_score,death,population,covid_per_population,age,avg,min,max,highschool,college,d/c,d or r,avg_income
 AL,269877,13,3889,4903185,5.504116202,39.5,41459.57,6190,133231,83.1,22.6,1.441026838,1,41.45957
 AK,35509,5,135,731545,4.85397344,36.54,62630.83,17126,138010,91.6,27.5,0.380185305,1,62.63083
 AZ,364276,3,6950,7278717,5.004673214,39.2,50510.22,10416,226983,85.7,26.9,1.907894014,1,50.51022

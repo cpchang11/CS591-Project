@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2611f46-6dd5-4b1d-916e-2bbce09e63d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python/multi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/multi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
