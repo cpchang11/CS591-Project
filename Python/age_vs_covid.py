@@ -10,19 +10,13 @@ from scipy import stats
 from age import *
 import numpy as np
 
-age_dict = averageAge()
 df = pd.read_csv('../CSV/state_cases_political_score.csv')
 covid_list = df['c/p'].tolist()
-state_list = df['state'].tolist()
-state_age = []
-state_covid = []
+age_list = df['age'].tolist()
 
-test_array = []
-for i in range(50):
-    test_array.append(i + 1)
 
-for i in range(len(state_list)):
-    state_age.append(age_dict[abbrev_us_state[state_list[i]]])
+
+
 
 
 
