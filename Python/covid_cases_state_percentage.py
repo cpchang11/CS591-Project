@@ -79,7 +79,7 @@ fig.update_layout(
         lakecolor='rgb(255, 255, 255)'),
 )
 
-# fig.show()
+fig.show()
 
 """ COVID vs Education Correlation """
 
