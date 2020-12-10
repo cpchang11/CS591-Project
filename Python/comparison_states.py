@@ -16,7 +16,7 @@ plt.xlabel('Average Age of State')
 # List 2
 plt.ylabel('COVID Cases Per Population (%)')
 mymodel = np.poly1d(np.polyfit(list1, list2, 1))
-myline = np.linspace(30, 45, 1000)
+myline = np.linspace(round(min(list1) - 5), round(max(list1) + 5), 1000)
 plt.plot(myline, mymodel(myline))
 gradient, intercept, r_value, p_value, std_err = stats.linregress(list1, list2)
 print("y = ", gradient, "x + ", intercept)
