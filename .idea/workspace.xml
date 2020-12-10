@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2611f46-6dd5-4b1d-916e-2bbce09e63d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CS591-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CS591-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/state_cases_political_score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/state_cases_political_score.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/covid_political_correlation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/covid_political_correlation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/education.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/education.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/income.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/income.py" afterDir="false" />
-    </list>
+    <list default="true" id="e2611f46-6dd5-4b1d-916e-2bbce09e63d4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
